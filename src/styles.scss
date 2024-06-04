@@ -1,0 +1,224 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+/* You can add global styles to this file, and also import other style files */
+body{
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+.disabled-text{
+  opacity: 0.4;
+}
+
+.page-container{
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scrollable-container{
+  overflow-y: scroll;
+  height: 85vh;
+}
+
+.bottom-button{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-button{
+  width: 100%;
+}
+
+.default-container{
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: 8px;
+    padding: 15px 20px;
+}
+
+.table-container{
+  background-color: var(--tg-theme-secondary-bg-color);
+}
+
+.table-info{
+  background-color: var(--tg-theme-secondary-bg-color);
+  border-radius: 8px 8px 0 0;
+  padding: 15px 30px;
+  margin-top: 10px;
+}
+
+.currency-icon{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.default-text{
+  color: var(--tg-theme-text-color);
+}
+
+.header-text{
+  margin: 5px;
+  margin-top: 0;
+}
+
+.margin-header{
+  margin-top: 10px;
+}
+
+.hint-text{
+  color: var(--tg-theme-hint-color);
+}
+
+.link-text{
+  color: var(--tg-theme-link-color);
+}
+
+.default-button{
+  background-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  border-radius: 8px;
+  border: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+.mat-mdc-form-field-infix{
+    display: flex;
+    align-items: center;
+    padding: 5px !important;
+    min-height: unset !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  border-color: var(--tg-theme-text-color) !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused
+  .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused
+  .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused
+  .mdc-notched-outline__trailing {
+  border-color: var(--tg-theme-button-color) !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid
+  .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid
+  .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--invalid
+  .mdc-notched-outline__trailing {
+  border-color: red !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input{
+  color: var(--tg-theme-text-color) !important;
+}
+
+.mat-mdc-select-panel{
+  background-color: var(--tg-theme-bg-color) !important;
+}
+
+.mat-mdc-option.mdc-list-item:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+  color:  var(--tg-theme-text-color) !important;
+}
+
+.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+  color:  var(--tg-theme-button-color) !important;
+}
+
+.mat-mdc-select-value-text{
+  color:  var(--tg-theme-text-color) !important;
+}
+
+.mat-pseudo-checkbox{
+  color:  var(--tg-theme-button-color) !important;
+}
+
+.mat-mdc-form-field.mat-focused .mat-mdc-select-arrow {
+  color:  var(--tg-theme-button-color) !important;
+}
+
+.mat-mdc-form-field.mat .mat-mdc-select-arrow {
+  color:  var(--tg-theme-text-color) !important;
+}
+
+.mdc-form-field{
+  color: var(--tg-theme-text-color) !important;
+}
+
+.mat-mdc-checkbox.mat-mdc-checkbox-checked .mdc-checkbox__background, .mdc-checkbox__ripple {
+  background-color: var(--tg-theme-button-color) !important;
+  border-color: var(--tg-theme-button-color) !important;
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background{
+  background-color: var(--tg-theme-button-color) !important;
+  border-color: var(--tg-theme-button-color) !important;
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background{
+  border-color: var(--tg-theme-text-color) !important;
+}
+
+.mat-mdc-paginator{
+  background-color: var(--tg-theme-secondary-bg-color) !important;
+  color: var(--tg-theme-text-color) !important;
+}
+
+.mat-mdc-paginator-icon{
+  fill: var(--tg-theme-text-color) !important;
+}
+
+.mat-mdc-icon-button:disabled{
+  opacity: 0.4 !important;
+}
+
+.mat-mdc-table{
+  background-color: var(--tg-theme-secondary-bg-color) !important;
+}
+
+.mat-mdc-header-row {
+  color: var(--tg-theme-text-color) !important;
+}
+
+.mat-mdc-row{
+  color: var(--tg-theme-text-color) !important;
+}
+
+.mat-mdc-footer-row{
+  color: var(--tg-theme-text-color) !important;
+}
+
+.table-footer{
+  background-color: var(--tg-theme-secondary-bg-color) !important;
+  color: var(--tg-theme-text-color) !important;
+  text-align: center;
+  padding: 30px;
+}
+
+.button-disabled{
+  opacity: 0.4;
+  &:hover{
+    opacity: 0.4;
+  }
+}

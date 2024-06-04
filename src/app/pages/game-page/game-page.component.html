@@ -1,0 +1,32 @@
+<div class="page-container">
+  <div class="scrollable-container">
+    <div *ngIf="gameInfo?.participantJoined" class="profile-container default-container">
+      <div style="display: flex;">
+        <img *ngIf="opponentAvatar" class="avatar" [src]="opponentAvatar">
+        <img *ngIf="!opponentAvatar" class="avatar" src="../../../assets/default-avatar.avif"> 
+        <div style="display: flex; flex-direction: column; justify-content: space-around; margin-left: 10px;">
+          <div class="default-text"><b>{{opponentName}}</b></div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: space-around; align-items: end;">
+        <div style="display: flex; align-items: center;">
+          <span class="default-text" style="margin-right: 2px;"><b>Game balance: {{gameInfo.priceGame}}</b></span>
+           <img class="currency-icon" src="../../../assets/coin.png">
+        </div>
+        <div style="display: flex; align-items: center;">
+          <span *ngIf="activePlayer === playerSide && !isGameOver" class="default-text" style="margin-right: 10px;"><b>Your turn</b></span>
+          <span *ngIf="activePlayer !== playerSide && !isGameOver" class="default-text" style="margin-right: 10px;"><b>Opponent turn</b></span>
+          <span class="default-text" style="margin-right: 2px;"><b>00:19</b></span>
+          <img class="currency-icon" src="../../../assets/clock.svg">
+        </div>
+      </div>
+    </div>
+    <h3 *ngIf="!gameInfo?.participantJoined">Waiting for opponent...</h3>
+    <new-board-app style="display: flex; justify-content: center; margin-top: 10px;"></new-board-app>
+  </div>
+  <div class="bottom-button">
+      <button *ngIf="gameInfo?.participantJoined && !isGameOver && !isGiveUp" class="default-button bottom-button" (click)="giveUp()">Give up</button>
+      <button *ngIf="!gameInfo?.participantJoined" class="default-button bottom-button" (click)="quitGame()">Quit game</button>
+      <button *ngIf="gameInfo?.participantJoined && (isGameOver || isGiveUp)" class="default-button bottom-button" (click)="goToMain()">Back to main</button>
+  </div>
+</div>

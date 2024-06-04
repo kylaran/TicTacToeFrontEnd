@@ -1,0 +1,20 @@
+<div class="profile-container default-container">
+  <div style="display: flex;">
+    <img *ngIf="userData?.photo_url" class="avatar" src="{{'data:image/jpg;base64,' + userData?.photo_url}}">
+    <img *ngIf="!userData?.photo_url" class="avatar" src="../../../assets/default-avatar.avif">
+    <div style="display: flex; flex-direction: column; justify-content: space-around; margin-left: 10px;">
+      <div class="default-text"><b>{{userData?.first_name}}</b></div>
+      <div class="link-text">{{fromPage === 'main' ? 'To profile' : 'Player'}}</div>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; justify-content: space-around; align-items: end;">
+    <div style="display: flex; align-items: center;">
+      <span class="default-text" style="margin-right: 2px;"><b>{{userData?.freeCoin}}</b></span>
+       <img class="currency-icon" src="../../../assets/coin.png">
+    </div>
+    <div style="display: flex; align-items: center;">
+      <span class="default-text" style="margin-right: 2px;"><b>{{userData?.tonCoin}}</b></span>
+       <img class="currency-icon" src="../../../assets/ton.png">
+    </div>
+  </div>
+</div>

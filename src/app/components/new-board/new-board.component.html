@@ -1,0 +1,25 @@
+<svg 
+  class="board" 
+  [attr.viewBox]="'0 0 ' + currentDimension + ' ' + currentDimension"
+  [style.width.%]="100" 
+  [style.height.%]="100">
+  <ng-container *ngFor="let cell of board; let i = index">
+    <rect 
+      [attr.x]="i % currentDimension" 
+      [attr.y]="math.floor(i / currentDimension)" 
+      [attr.width]="1" 
+      [attr.height]="1" 
+      class="cell" 
+      (click)="makeMove(cell, i)" 
+      [ngClass]="{noClick: playerSide !== activePlayer}" />
+    <text 
+      *ngIf="cell !== CellEnum.None" 
+      [attr.x]="(i % currentDimension) + 0.5" 
+      [attr.y]="math.floor(i / currentDimension) + 0.6" 
+      text-anchor="middle"
+      alignment-baseline="middle"
+      [attr.font-size]="0.5">
+      {{getSymbol(cell)}}
+    </text>
+  </ng-container>
+</svg>

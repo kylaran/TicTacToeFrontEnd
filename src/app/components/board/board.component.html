@@ -1,0 +1,7 @@
+<div class="board">
+  <div *ngFor="let cell of gameService.board; let index = index" class="cell" 
+  [ngStyle]="{'width': (95 - 0.7*(gameService.currentDimension-1)) / gameService.currentDimension + '%', 'height': (95 - 0.7*(gameService.currentDimension-1)) / gameService.currentDimension + '%'}"
+  >
+    <p class="cell-text" [ngStyle]="{'font-size': 'calc(100vw / ' + gameService.currentDimension + ')'}"> {{cell === CellEnum.Tic ? 'X' : cell === CellEnum.Tac ? 'O' : ''}} </p>
+  </div>
+</div>

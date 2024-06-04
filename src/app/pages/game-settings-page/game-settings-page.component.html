@@ -1,0 +1,44 @@
+<div class="page-container">
+    <div class="scrollable-container">
+        <h2 class="default-text header-text">Create game</h2>
+        <p class="hint-text" style="margin: 0 5px;">Configure game settings</p>
+        <div style="margin-top: 10px;">
+            <mat-checkbox [formControl]="isWithBot">Play with bot</mat-checkbox>    
+        </div>
+        <h3 class="default-text header-text margin-header" [ngClass]="{'disabled-text': this.isWithBot.value}">Bet</h3>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <input matInput type="number" [formControl]="betAmount">
+            <img class="icon currency-icon" src="../../../assets/coin.png"/>
+            <mat-error *ngIf="betAmount.invalid">Bet must be greater than 10 coins</mat-error>
+        </mat-form-field>
+        <h3 class="default-text header-text">Board dimension (N×N)</h3>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <input matInput type="number" [formControl]="boardDimension">
+            <mat-error *ngIf="boardDimension.invalid">Dimension must be from 3 to 15</mat-error>
+        </mat-form-field>
+        <h3 class="default-text header-text">Winline length</h3>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <input matInput type="number" [formControl]="winlineLength">
+            <mat-error *ngIf="winlineLength.invalid">Winline length must be from 3 to 6</mat-error>
+        </mat-form-field>
+        <h3 class="default-text header-text" [ngClass]="{'disabled-text': this.isWithBot.value}">Move time (seconds)</h3>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <input matInput type="number" [formControl]="moveTime">
+            <mat-error *ngIf="moveTime.invalid">Move time must be from 10 to 180 seconds</mat-error>
+        </mat-form-field>
+        <h3 class="default-text header-text">First turn</h3>
+        <mat-form-field appearance="outline"> 
+            <mat-select [formControl]="firstStep">
+              <mat-option [value]="FirstStepEnum.Random">Random</mat-option>
+              <mat-option [value]="FirstStepEnum.Creater">Creator</mat-option>
+              <mat-option [value]="FirstStepEnum.Joiner">Joiner</mat-option>
+            </mat-select>
+          </mat-form-field>
+        <div>
+            <mat-checkbox [formControl]="isPrivate">Private game</mat-checkbox>
+        </div>
+    </div>
+    <div class="bottom-button">
+        <button class="default-button bottom-button" (click)="onSubmit()">Submit settings</button>
+    </div>
+</div>

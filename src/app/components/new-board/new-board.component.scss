@@ -1,0 +1,24 @@
+.board {
+  display: block;
+  margin: 0 auto;
+}
+
+.cell {
+  fill: var(--tg-theme-secondary-bg-color); //цвет фона таблицы
+  stroke: var(--tg-theme-bg-color); //цвет рамки таблицы
+  stroke-width: 0.05;
+  cursor: pointer;
+  transition: fill 3s;
+  border-radius: 8px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.noClick {
+  pointer-events: none;
+}
+
+text {
+  font-family: Arial, sans-serif;
+  fill: var(--tg-theme-text-color);
+}

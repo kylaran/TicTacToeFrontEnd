@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  tictactoe.webapp:
+    image: ${CI_REGISTRY_IMAGE}/tictactoe.webapp:${TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile
+
